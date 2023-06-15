@@ -1,3 +1,5 @@
 <a href="{{$href}}" class="btn btn-primary">
-    {{$slot}}
+  {{$slot}}
 </a>
+
+

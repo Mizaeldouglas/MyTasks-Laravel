@@ -1,6 +1,8 @@
-<x-layout name-btn="Criar Tarefa">
 
-
+<x-layout>
+<x-slot:btn>
+    <x-button  href="{{route('task.create')}}" >Criar tarefa</x-button>
+</x-slot:btn>
     <section class="graph">
         <div class="graph_header">
             <h2>Progresso do Dia</h2>
@@ -29,39 +31,12 @@
             </select>
         </div>
         <div class="tasks_list">
-            @php
-                $tasks = [
-                    [
-                        'id' => 1,
-                        'done' =>false,
-                        'title' => 'Minha Primeira Task',
-                        'category' => 'Categoria 1',
-                        'delete_url' => '#',
-                        'edit_url' => '#',
-                    ],
-                    [
-                        'id' => 2,
-                        'done' =>true,
-                        'title' => 'Minha Segunda Task',
-                        'category' => 'Categoria 2',
-                        'delete_url' => '#',
-                        'edit_url' => '#',
-                    ],
-                    [
-                        'id' => 3,
-                        'done' =>false,
-                        'title' => 'Minha Terceira Task',
-                        'category' => 'Categoria 1',
-                        'delete_url' => '#',
-                        'edit_url' => '#',
-                    ]
-];
-             @endphp
+            @foreach($tasks as $task)
+            <x-task :data=$task/>
+            @endforeach
 
 
-            <x-task :data=$tasks[0] />
-            <x-task :data=$tasks[1] />
-            <x-task :data=$tasks[2] />
+
 
         </div>
     </section>

@@ -14,14 +14,31 @@
 <body>
 <div class="container">
     <div class="siderbar">
-        <img src="/assets/images/logo2.png" alt="">
+        <a href="{{route('home')}}">
+          <img src="/assets/images/logo2.png" alt="">
+        </a>
+      <p class="my_name">M</p>
+      <p class="my_name">I</p>
+      <p class="my_name">Z</p>
+      <p class="my_name">A</p>
+      <p class="my_name">E</p>
+      <p class="my_name">L</p>
+      <br>
+
+      <br>
+
+      <p class="my_name">D</p>
+      <p class="my_name">O</p>
+      <p class="my_name">U</p>
+      <p class="my_name">G</p>
+      <p class="my_name">L</p>
+      <p class="my_name">A</p>
+      <p class="my_name">S</p>
     </div>
     <div class="content">
-        <nav>
-            <x-button href="{{$link ?? '/#' }}">
-                {{$nameBtn ?? null}}
-            </x-button>
-        </nav>
+      <nav>
+        {{$btn}}
+      </nav>
         <main>
             {{$slot}}
         </main>
