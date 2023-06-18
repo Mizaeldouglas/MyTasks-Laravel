@@ -3,5 +3,36 @@
     <x-button  href="{{route('login')}}" >Já Possui conta? Faça login</x-button>
   </x-slot:btn>
 
-    tela de Register
+  <section id="task_section">
+
+    <h1>Registrar-se</h1>
+
+    <form method="POST" action="{{route('user.register_action')}}">
+      @csrf
+      <x-form.text_input
+        label="nome"
+        name="name"
+        required="required"
+        placeholder="Seu Nome"
+      />
+
+      <x-form.text_input
+        label="Email"
+        name="email"
+        type="email"
+        required="required"
+        placeholder="Seu Email"
+      />
+      <x-form.text_input
+        label="Senha"
+        name="password"
+        type="password"
+        required="required"
+        placeholder="Sua Senha"
+      />
+
+      <x-form.buttonForm txt-reset="Limpar" txt-submit="Registrar-se" />
+
+    </form>
+  </section>
 </x-layout>

@@ -9,8 +9,16 @@
 
     <form method="POST" action="{{route('task.edit_action')}}">
       @csrf
-      <input type="hidden" name="id" value="{{$task->id}}" />
+      <input type="hidden" name="id" value="{{$task->id}}"/>
+
+      <x-form.checkbox_input
+        name="is_done"
+        label="Tarefa Realizada"
+        checked="{{$task->is_done}}"
+      />
+
       <x-form.text_input
+        type="text"
         label="Titulo da Tarefa"
         name="title"
         required="required"
@@ -34,8 +42,8 @@
       >
         @foreach($categories as $category)
           <option value="{{$category->id}}"
-            @if($category->id == $task->category_id)
-              selected
+                  @if($category->id == $task->category_id)
+                    selected
             @endif
           >{{$category->title}}</option>
         @endforeach
