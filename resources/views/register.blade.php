@@ -7,6 +7,14 @@
 
     <h1>Registrar-se</h1>
 
+    @if($errors->any())
+      <ul class="alert alert-error">
+        @foreach($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    @endif
+
     <form method="POST" action="{{route('user.register_action')}}">
       @csrf
       <x-form.text_input
@@ -29,6 +37,13 @@
         type="password"
         required="required"
         placeholder="Sua Senha"
+      />
+      <x-form.text_input
+        label="Confirmar Senha"
+        name="password_confirmation"
+        type="password"
+        required="required"
+        placeholder="Confirmar Senha"
       />
 
       <x-form.buttonForm txt-reset="Limpar" txt-submit="Registrar-se" />

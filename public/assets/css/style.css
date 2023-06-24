@@ -274,3 +274,8 @@ h2 {
 .submit:hover{
   background-color: green;
 }
+
+.alert li {
+  color: #fe2919;
+  list-style: none;
+}

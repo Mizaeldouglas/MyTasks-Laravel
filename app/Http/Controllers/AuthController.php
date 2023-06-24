@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    //
+  //
   public function index(Request $request)
   {
+    $ico = 'ola Mundo!';
     return view('login');
   }
 
@@ -20,10 +21,27 @@ class AuthController extends Controller
 
   public function register_action(Request $request)
   {
-    $data = $request->only('name','email', 'password',);
+
+    $request->validate([
+      'name' =>'required',
+      'email' =>'required|email|unique:users',
+      'password' =>'required|min:6|confirmed',
+    ]);
+
+    $data = $request->only('name', 'email', 'password',);
 
     $userCreated = User::create($data);
 
-    dd($userCreated);
+
+    return redirect(route('login'));
+  }
+
+  public function login_action(Request $request)
+  {
+    $validator =  $request->validate([
+      'email' =>'required|email',
+      'password' =>'required|min:6',
+    ]);
+    dd($validator);
   }
 }
