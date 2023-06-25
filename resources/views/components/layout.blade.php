@@ -39,7 +39,7 @@
     <nav>
       {{$btn}}
       <div class="name_login">
-          <p>🌄</p>
+          <p>🙅‍️</p>
           {{$nameLogin ?? ''}}
       </div>
 
@@ -50,4 +50,5 @@
   </div>
 </div>
 </body>
+
 </html>
