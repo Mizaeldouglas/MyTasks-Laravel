@@ -57,7 +57,21 @@ nav {
   justify-content: flex-end;
   padding-left: 20px;
 }
-
+.name_login{
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+}
+.name_login p{
+  margin-bottom: 5px;
+  font-size: 30px;
+}
 .btn {
   padding: 20px 30px;
   border-radius: 10px;

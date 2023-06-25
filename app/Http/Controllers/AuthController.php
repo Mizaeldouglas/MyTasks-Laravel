@@ -4,18 +4,35 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
   //
   public function index(Request $request)
   {
-    $ico = 'ola Mundo!';
+//    dd(\Auth::user());
+    if (Auth::check()){
+      return redirect()->route('home');
+    }
     return view('login');
+  }
+  public function login_action(Request $request)
+  {
+    $validator =  $request->validate([
+      'email' =>'required|email',
+      'password' =>'required|min:6',
+    ]);
+    if (\Auth::attempt($validator)) {
+      return redirect()->route('home');
+    }
   }
 
   public function register(Request $request)
   {
+    if (Auth::check()){
+      return redirect()->route('home');
+    }
     return view('register');
   }
 
@@ -29,6 +46,7 @@ class AuthController extends Controller
     ]);
 
     $data = $request->only('name', 'email', 'password',);
+    $data['password'] = \Hash::make($data['password']);
 
     $userCreated = User::create($data);
 
@@ -36,12 +54,11 @@ class AuthController extends Controller
     return redirect(route('login'));
   }
 
-  public function login_action(Request $request)
+  public function logout()
   {
-    $validator =  $request->validate([
-      'email' =>'required|email',
-      'password' =>'required|min:6',
-    ]);
-    dd($validator);
+    Auth::logout();
+    return redirect()->route('login');
   }
+
+
 }
