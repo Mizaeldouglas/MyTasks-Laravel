@@ -7,7 +7,6 @@
 #### - Tela Inicial
 
 ![Captura de Tela 2023-06-14 às 14.42.33.png](..%2F..%2F..%2FMovies%2Fgravacao%20de%20telas%2FCaptura%20de%20Tela%202023-06-14%20%C3%A0s%2014.42.33.png)
-
 <br>
 <hr>
 <br>
