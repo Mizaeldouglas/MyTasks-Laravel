@@ -6,7 +6,7 @@
 
 #### - Tela Inicial
 
-![Captura de Tela 2023-06-14 às 14 42 33](https://github.com/Mizaeldouglas/MyTasks-Laravel/assets/89351018/a4e0de60-6157-4fb2-9d26-bcb781a611e3)
+<img width="1433" alt="Captura de Tela 2023-06-25 às 19 03 43" src="https://github.com/Mizaeldouglas/MyTasks-Laravel/assets/89351018/c3a64e3c-7caf-457a-a916-1bc8de223c83">
 
 <br>
 <hr>
